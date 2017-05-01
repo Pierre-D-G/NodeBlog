@@ -1,5 +1,5 @@
 # NodeBlog
-Node Express MySQL Blog Website
+Node Express Postgresql Blog Website
 
 
 ## Features
