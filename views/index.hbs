@@ -1,2 +1,26 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="row">
+<div class="col-md-8">
+
+    <h1 class="page-header">
+        NodeBlog
+        <small>Blog Posts</small>
+    </h1>
+
+    {{#each posts }}
+
+    <h2>
+        <a href="#">{{title}}</a>
+    </h2>
+    <p class="lead">
+        by <a href="#">{{author}}</a> in <a href="#">{{category}}</a>
+    </p>
+    <p><span class="glyphicon glyphicon-time"></span>Posted on <span class="date">{{date}}</span></p>
+    <hr>
+    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+    <hr>
+    <p>{{body}}</p>
+    <a class="btn btn-primary" href="posts/show/{{_id}}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+    <hr> {{/each}}
+
+</div>

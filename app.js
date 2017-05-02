@@ -9,7 +9,9 @@ var express = require('express');
     mongo = require('mongodb'),
     db = require('monk')('localhost/nodeblog'),
     multer = require('multer'),
-    flash = require('connect-flash')
+    flash = require('connect-flash'),
+    Handlebars = require("handlebars");
+
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -71,6 +73,7 @@ app.use(function(req, res, next){
   req.db = db;
   next()
 });
+
 
 app.use('/', index);
 app.use('/users', users);

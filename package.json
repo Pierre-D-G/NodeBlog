@@ -15,6 +15,7 @@
     "express-session": "*",
     "express-validator": "*",
     "hbs": "~4.0.1",
+    "just-handlebars-helpers": "^1.0.13",
     "moment": "*",
     "mongodb": "~2.2.26",
     "monk": "^4.0.0",
