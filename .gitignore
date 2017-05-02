@@ -4,6 +4,8 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
+# ignore node_modules directory
+/node_modules
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
@@ -13,6 +15,8 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+#ignore all files in the noe modules directory
+node_modules/
 
 # Windows shortcuts
 *.lnk
