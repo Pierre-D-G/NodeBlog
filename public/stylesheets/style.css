@@ -1,17 +1,77 @@
-/*!
- * Start Bootstrap - Blog Home (http://startbootstrap.com/)
- * Copyright 2013-2016 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
- */
-
-body {
-    padding-top: 70px;
+body{
+    font-family: arial;
+    font-size: 15px;
+    background: #f4f4f4;
+    color: #666
+}
+#wrapper{
+ width: 980px;
+ border: 1px solid #ccc;
+ margin: 20px auto;
+ padding: 20px;
+ border-top: #83cd39 3px solid;
 }
 
-footer {
-    margin: 50px 0;
+img{
+    max-width: 100%;
 }
 
-.container{
-    width: 980px;
+.logo-text{
+    font-size: 3em;
+    position: absolute;
+    top: 120px;
+    left: 330px;
+}
+
+.left{
+    color: #83cd39
+}
+
+
+.clr{
+    clear:both;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, p{
+    padding: 5px 0;
+    margin-bottom: 0;
+}
+
+p{
+    margin: 0;
+}
+
+a{
+    color: #404137;
+    text-decoration: none;
+}
+
+nav{
+    overflow: auto;
+    height: 40px;
+    padding: 20px 0 0 10px;
+    font-size: 18px;
+    background: #404137;
+    color: #fff;
+}
+
+nav li{
+    float: left;
+    list-style: none;
+}
+
+nav a{
+    padding: 10px;
+    margin: 0 10px;
+    color: #fff;
+}
+
+nav a.current, a:hover{
+    background: #83cd29;
+    color: #000;
 }

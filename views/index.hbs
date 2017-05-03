@@ -1,26 +1,36 @@
-<div class="row">
-<div class="col-md-8">
+  {{!--<div class="sidebar">
+          <div class="gadget">
+            <h2 class="star"><span>Categories</span> Menu</h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">TemplateInfo</a></li>
+              <li><a href="#">Style Demo</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Archives</a></li>
+            </ul>
+          {{!--</div>--}}
+      </div>
+    </div>
 
-    <h1 class="page-header">
-        NodeBlog
-        <small>Blog Posts</small>
-    </h1>
 
-    {{#each posts }}
+{{#each posts }}
+      <div class="content">
+      <div class="content_resize">
+        <div class="mainbar">
+          <div class="article">
+            <h2><span>Template License</span></h2>
+            <div class="clr"></div>
+            <p><span class="date">March 16, 2018</span> &nbsp;|&nbsp; Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under
+              <a href="#">templates</a>, <a href="#">internet</a></p>
+            <img src="images/img1.jpg" width="263" height="146" alt="" class="fl" />
+            <p>This is a free CSS website template by AtomicWebsiteTemplates.com. This work is distributed under the Creative
+              Commons Attribution 3.0 License, which means that you are free to use it for any personal or commercial purpose
+              provided you credit me in the form of a link back to AtomicWebsiteTemplates.com.</p>
+            <p class="spec"><a href="#" class="rm">Read more</a> <a href="#" class="com">Comments (3)</a></p>
+          </div>
+        </div>
+{{/each}}
+      
 
-    <h2>
-        <a href="#">{{title}}</a>
-    </h2>
-    <p class="lead">
-        by <a href="#">{{author}}</a> in <a href="#">{{category}}</a>
-    </p>
-    <p><span class="glyphicon glyphicon-time"></span>Posted on <span class="date">{{date}}</span></p>
-    <hr>
-    <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-    <hr>
-    <p>{{body}}</p>
-    <a class="btn btn-primary" href="posts/show/{{_id}}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-    <hr> {{/each}}
-
-</div>
+--}}
