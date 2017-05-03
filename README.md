@@ -14,9 +14,9 @@ Blog post page with comments
 
 ## TODO
 
-Modules,Middleware and Templates
+~~Modules,Middleware and Templates~~
 
-Homepage for blog posts
+~~Homepage for blog posts~~
 
 Add posts and categories
 
