@@ -1,0 +1,60 @@
+
+
+<div class="form">
+    <h1>Create a New Blog Post</h1>
+  {{#if errors}}
+      {{#each errors}}
+        <div class="alert alert-danger">{{this.msg}}</div>
+      {{/each }}
+{{/if}}
+  <form action="/posts/new" method="POST" enctype="multipart/form-data">
+    <fieldset>
+      <div class="form-group">
+        <!-- Blog Post Title-->
+        <label for="title" class="control-label">Title</label>
+        <div class="controls">
+          <input id="title" type="text" name="title" placeholder="Blog Title"/>
+          <p class="help-block">Enter the title of your blog post</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- Category-->
+        <label for="category" class="control-label">Category</label>
+        <div class="controls">
+          <input id="category" type="text" name="category"/>
+          <p class="help-block">Enter the category of your blog post (e.g Finance,Technology,Fashion)</p>
+        </div>
+      </div>
+       <div class="form-group">
+        <!-- Author-->
+        <label for="author" class="control-label">Author</label>
+        <div class="controls">
+          <input id="author" type="text" name="author"  placeholder="John Doe"/>
+          <p class="help-block">Enter your name</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- Blog Content-->
+        <label for="content" class="control-label">Blog Post</label>
+        <div class="controls">
+          <textarea name="body" id="content"></textarea>
+          <p class="help-block">Enter your blog post here</p>
+        </div>
+      </div>
+      <!-- Blog Image -->
+      <div class="form-group">
+        <label for="image" class="control-label">Blog Image</label>
+        <div class="controls">
+          <input id="image" type="file" name="blogImage"/>
+          <p class="help-block">Upload your blog image</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- Submit Button-->
+        <div class="controls">
+          <button type="submit" class="submit-button">Submit Blog</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

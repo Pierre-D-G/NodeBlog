@@ -7,7 +7,7 @@ var db = require('monk')('localhost/nodeblog')
 
 /* Create a new blog post route*/
 router.get('/new', function(req, res, next) {
-  res.send('respond with a resource');
+  res.render('newBlog')
 });
 
 module.exports = router;
