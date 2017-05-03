@@ -1,36 +1,10 @@
-  {{!--<div class="sidebar">
-          <div class="gadget">
-            <h2 class="star"><span>Categories</span> Menu</h2>
-            <div class="clr"></div>
-            <ul class="sb_menu">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">TemplateInfo</a></li>
-              <li><a href="#">Style Demo</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Archives</a></li>
-            </ul>
-          {{!--</div>--}}
-      </div>
-    </div>
-
-
 {{#each posts }}
-      <div class="content">
-      <div class="content_resize">
-        <div class="mainbar">
           <div class="article">
-            <h2><span>Template License</span></h2>
+            <h2><span>{{title}}</span></h2>
             <div class="clr"></div>
-            <p><span class="date">March 16, 2018</span> &nbsp;|&nbsp; Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under
-              <a href="#">templates</a>, <a href="#">internet</a></p>
-            <img src="images/img1.jpg" width="263" height="146" alt="" class="fl" />
-            <p>This is a free CSS website template by AtomicWebsiteTemplates.com. This work is distributed under the Creative
-              Commons Attribution 3.0 License, which means that you are free to use it for any personal or commercial purpose
-              provided you credit me in the form of a link back to AtomicWebsiteTemplates.com.</p>
-            <p class="spec"><a href="#" class="rm">Read more</a> <a href="#" class="com">Comments (3)</a></p>
+            <p>{{date}} &nbsp;|&nbsp; Posted by {{author}} in <a href="#">{{category}}</a></p>
+            <img src="#" width="263" height="146"/>
+            <p>{{body}}</p>
+            <p><a href="/posts/">Read more</a></p>
           </div>
-        </div>
 {{/each}}
-      
-
---}}

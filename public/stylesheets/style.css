@@ -75,3 +75,9 @@ nav a.current, a:hover{
     background: #83cd29;
     color: #000;
 }
+
+.article{
+    margin: 20px auto;
+    padding: 20px;
+    border-top: #83cd39 3px solid;
+}
