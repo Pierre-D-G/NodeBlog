@@ -96,3 +96,14 @@ textarea{
     height: 70px;
     width: 400px;
 }
+
+.read-more{
+    background: #83cd29;
+    border: 1px solid #666;
+    width: 40px;
+    height: 25px;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: 1.2em;
+
+}

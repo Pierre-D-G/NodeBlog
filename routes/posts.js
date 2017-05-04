@@ -25,18 +25,24 @@ var db = require('monk')('localhost/nodeblog');
 
 /*Post form data*/
 router.post('/new', upload.single('blogImage'), function (req, res, next) {
+  console.log(req.file);
   /* Grabbing form data */
   var title = req.body.title,
       category = req.body.category,
       author = req.body.author,
       content = req.body.content,
       date = new Date();
+
+
   /*  Grabbing form image data */
-  if (req.file.blogImage) {
-    var blogImageOgName = req.file.blogImage.originalname,
-        blogImageName = req.file.blogImage.name;
+  if (req.file) {
+    console.log(req.file);
+    console.log(req.file.originalname, req.file.filename);
+    // var blogImageOgName = req.file.;
+    var mainBlogImageName = req.file.filename
   } else {
-    var blogImageName = 'noimage.png'
+    
+    var mainBlogImageName = 'noimage.png'
   }
   // Form validation
   req.checkBody('title', 'A blog title is required').notEmpty();
@@ -53,8 +59,8 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "content": content
     });
   } else {
-    
     var posts = db.get('posts');
+
     // Submitting data to database
     posts.insert({
       "title": title,
@@ -62,15 +68,15 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "author": author,
       "content": content,
       "date": date,
-      "blogImage": blogImageOgName,
+      "blogImage": mainBlogImageName,
       function (err, post) {
-        if (err) {
-          res.send('There was an issue submitting the blog post')
-        } else {
-          req.flash('success', 'B;og Post Submitted Successfully!');
+        if(err){
+          res.render('error')
+        }else{
+          req.flash('success', 'Blog Post Submitted Successfully!');
           res.redirect('/');
+          }
         }
-      }
     });
   }
 });

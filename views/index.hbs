@@ -3,8 +3,8 @@
             <h2><span>{{title}}</span></h2>
             <div class="clr"></div>
             <p>{{date}} &nbsp;|&nbsp; Posted by {{author}} in <a href="#">{{category}}</a></p>
-            <img src="#" width="263" height="146"/>
-            <p>{{content}}</p>
-            <p><a href="/posts/">Read more</a></p>
+            <img src="/images/uploads/{{blogImage}}"  width="720" height="245"/>
+            <p>{{{content}}}</p>
+            <p><a href="/posts/{{_id}}" class="read-more">Read More</a></p>
           </div>
 {{/each}}
