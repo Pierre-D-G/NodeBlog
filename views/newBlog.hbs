@@ -35,9 +35,9 @@
       </div>
       <div class="form-group">
         <!-- Blog Content-->
-        <label for="content" class="control-label">Blog Post</label>
+        <label for="editor1" class="control-label">Blog Post</label>
         <div class="controls">
-          <textarea name="body" id="content"></textarea>
+          <textarea name="content" id="editor1"></textarea>
           <p class="help-block">Enter your blog post here</p>
         </div>
       </div>
@@ -57,4 +57,7 @@
       </div>
     </fieldset>
   </form>
+  <script>
+    CKEDITOR.replace('editor1')
+  </script>
 </div>
