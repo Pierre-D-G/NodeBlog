@@ -85,9 +85,9 @@ nav a.current, a:hover{
 .form-group{
     margin-bottom: 17px;
 }
-input[type="text"], textarea{
+input[type="text"], textarea, select{
     padding: 3px;
-    height: 20px;
+    height: 30px;
     width: 200px;
     border: 1px solid #ccc;
 }

@@ -20,7 +20,12 @@ var db = require('monk')('localhost/nodeblog');
 
 /* Create a new blog post route*/
   router.get('/new', function (req, res, next) {
-    res.render('newBlog')
+    var categories = db.get('categories');
+    categories.find({}, {}, function(err, categories){
+        res.render('newBlog', {
+          "categories": categories
+        });
+    });  
   });
 
 /*Post form data*/
