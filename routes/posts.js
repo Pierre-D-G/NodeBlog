@@ -6,47 +6,47 @@ var db = require('monk')('localhost/nodeblog');
 
 /* saving the extention of the file uploaded */
 
-  var storage = multer.diskStorage({
-    destination: function(req, file, cb){
-      cb(null, 'public/images/uploads')
-    },
-    filename: function(req, file, cb){
-      cb(null, Date.now() + path.extname(file.originalname));
-    }
-  });
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'public/images/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
 
-  var upload = multer({ storage: storage });
+var upload = multer({
+  storage: storage
+});
+
 /* Posts router */
 
 /* Create a new blog post route*/
-  router.get('/new', function (req, res, next) {
-    var categories = db.get('categories');
-    categories.find({}, {}, function(err, categories){
-        res.render('newBlog', {
-          "categories": categories
-        });
-    });  
+router.get('/new', function (req, res, next) {
+  var categories = db.get('categories');
+  categories.find({}, {}, function (err, categories) {
+    res.render('newBlog', {
+      "categories": categories
+    });
   });
+});
 
 /*Post form data*/
 router.post('/new', upload.single('blogImage'), function (req, res, next) {
-  console.log(req.file);
   /* Grabbing form data */
   var title = req.body.title,
-      category = req.body.category,
-      author = req.body.author,
-      content = req.body.content,
-      date = new Date();
+    category = req.body.category,
+    author = req.body.author,
+    content = req.body.content,
+    date = new Date();
 
 
   /*  Grabbing form image data */
   if (req.file) {
-    console.log(req.file);
-    console.log(req.file.originalname, req.file.filename);
     // var blogImageOgName = req.file.;
     var mainBlogImageName = req.file.filename
   } else {
-    
+
     var mainBlogImageName = 'noimage.png'
   }
   // Form validation
@@ -75,13 +75,13 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "date": date,
       "blogImage": mainBlogImageName,
       function (err, post) {
-        if(err){
+        if (err) {
           res.render('error')
-        }else{
+        } else {
           req.flash('success', 'Blog Post Submitted Successfully!');
           res.redirect('/');
-          }
         }
+      }
     });
   }
 });

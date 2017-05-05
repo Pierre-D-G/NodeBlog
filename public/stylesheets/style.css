@@ -1,57 +1,60 @@
-body{
+body {
     font-family: arial;
     font-size: 15px;
     background: #f4f4f4;
     color: #666
 }
-#wrapper{
- width: 980px;
- border: 1px solid #ccc;
- margin: 20px auto;
- padding: 20px;
- border-top: #83cd39 3px solid;
+
+#wrapper {
+    width: 980px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    padding: 20px;
+    border-top: #83cd39 3px solid;
 }
 
-img{
+img {
     max-width: 100%;
 }
 
-.logo-text{
+.logo-text {
     font-size: 3em;
     position: absolute;
     top: 120px;
     left: 330px;
 }
 
-.left{
+.left {
     color: #83cd39
 }
 
-
-.clr{
-    clear:both;
+.clr {
+    clear: both;
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
 
-h1, h2, h3, p{
+h1,
+h2,
+h3,
+p {
     padding: 5px 0;
     margin-bottom: 0;
 }
 
-p{
+p {
     margin: 0;
 }
 
-a{
+a {
     color: #404137;
     text-decoration: none;
 }
 
-nav{
+nav {
     overflow: auto;
     height: 40px;
     padding: 20px 0 0 10px;
@@ -60,44 +63,59 @@ nav{
     color: #fff;
 }
 
-nav li{
+nav li {
     float: left;
     list-style: none;
 }
 
-nav a{
+nav a {
     padding: 10px;
     margin: 0 10px;
     color: #fff;
 }
 
-nav a.current, a:hover{
+nav a.current,
+a:hover {
     background: #83cd29;
     color: #000;
 }
 
-.blog-post{
+.alert {
+    background: #404137;
+    color: red;
+    width: 480px;
+    padding: 3px;
+    margin: 5px auto;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.blog-post {
     margin: 20px auto;
     padding: 20px;
     border-top: #83cd39 3px solid;
 }
 
-.form-group{
+.form-group {
     margin-bottom: 17px;
 }
-input[type="text"], textarea, select{
+
+input[type="text"],
+textarea,
+select {
     padding: 3px;
     height: 30px;
     width: 200px;
     border: 1px solid #ccc;
 }
 
-textarea{
+textarea {
     height: 70px;
     width: 400px;
 }
 
-.read-more{
+.read-more {
     background: #83cd29;
     border: 1px solid #666;
     width: 40px;
@@ -105,5 +123,20 @@ textarea{
     padding: 10px;
     border-radius: 2px;
     font-size: 1.2em;
+}
 
+button {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #666;
+    background-color: #83cd29;
+    border-color: #83cd29;
 }

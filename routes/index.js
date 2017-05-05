@@ -4,10 +4,10 @@ var mongo = require('mongodb');
 var db = require('monk')('localhost/nodeblog');
 
 // Blog Home Page
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   var db = req.db;
   var posts = db.get('posts');
-  posts.find({}, {}, function(err, posts){
+  posts.find({}, {}, function (err, posts) {
     res.render('index', {
       "posts": posts
     });

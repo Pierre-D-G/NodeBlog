@@ -1,0 +1,21 @@
+<h1>
+  Add a new Category</h1>
+{{#if errors}} {{#each errors}}
+<div class="alert">{{this.msg}}</div>
+{{/each }} {{/if}}
+<form action="/categories/new" method="POST">
+  <fieldset>
+    <div class="form-group">
+      <label for="category" class="control-label">Category Name</label>
+      <div class="controls">
+        <input id="category" type="text" name="categoryName" placeholder="Category" />
+        <p class="help-block">Enter a new category</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="controls">
+        <button type="submit" class="submit-button">Add Category</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
