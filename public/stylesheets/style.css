@@ -30,6 +30,7 @@ ul {
     margin: 0;
 }
 
+
 h1,
 h2,
 h3,
@@ -40,7 +41,6 @@ p {
 
 p {
     margin: 0;
-    width: 100%;
 }
 
 a {
@@ -88,6 +88,10 @@ a:hover {
     margin: 0 auto;
 }
 
+.lead{
+    font-size: 1.2em;
+}
+
 .form-group {
     margin-bottom: 17px;
 }
@@ -107,7 +111,7 @@ textarea {
 }
 
 .read-more {
-    background: #83cd29;
+    background: #8BC34A;
     border: 1px solid #666;
     width: 40px;
     height: 25px;
@@ -128,6 +132,6 @@ button {
     border: 1px solid transparent;
     border-radius: 4px;
     color: #666;
-    background-color: #83cd29;
-    border-color: #83cd29;
+    background-color: #8BC34A;
+    border-color: #8BC34A;
 }

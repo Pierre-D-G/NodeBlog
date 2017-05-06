@@ -11,17 +11,16 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "express": "~4.15.2",
+    "express-handlebars": "^3.0.0",
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "hbs": "~4.0.1",
     "moment": "*",
     "mongodb": "~2.2.26",
     "monk": "^4.0.0",
     "morgan": "~1.8.1",
     "multer": "*",
     "path": "^0.12.7",
-    "requirejs": "^2.3.3",
     "serve-favicon": "~2.4.2"
   }
 }

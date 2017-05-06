@@ -1,11 +1,11 @@
 <div class="nine columns">
   {{#each posts }}
   <div class="blog-post">
-    <h2><span>{{title}}</span></h2>
-    <h3>by {{author}} in {{category}}</h3>
-    <p>Posted on {{date}}</p>
+    <h3><span>{{title}}</span></h2>
+    <p class="lead">by {{author}} in {{category}}</p>
+    <p>Posted on {{formatDate date "long"}}</p>
     <img src="/images/uploads/{{blogImage}}" width="710" height="300" />
-    <p>{{{content}}}</p>
+    <p>{{{ truncate content}}}</p>
     <p><a href="/posts/{{_id}}" class="read-more">Read More</a></p>
   </div>
   {{/each}}
