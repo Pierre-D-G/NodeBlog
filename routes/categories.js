@@ -31,7 +31,7 @@ router.post('/new', function (req, res, next) {
                 if (err) {
                     res.render('error')
                 } else {
-                    req.flash('success', 'Category Added Successfully!');
+                    // req.flash('success', 'Category Added Successfully!');
                     res.redirect('/');
                 }
             }

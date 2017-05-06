@@ -20,6 +20,11 @@ var categories = require('./routes/categories');
 
 var app = express();
 
+app.locals.shortenBody = function(text, length){
+  var shortBody = text.subString(0, length);
+  return shortBody;
+}
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');

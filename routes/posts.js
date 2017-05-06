@@ -78,7 +78,7 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
         if (err) {
           res.render('error')
         } else {
-          req.flash('success', 'Blog Post Submitted Successfully!');
+          // req.flash('success', 'Blog Post Submitted Successfully!');
           res.redirect('/');
         }
       }

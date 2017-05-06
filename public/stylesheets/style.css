@@ -1,44 +1,28 @@
-body {
-    margin: 0;
-    font-family: arial;
-    font-size: 15px;
-    background: #f4f4f4;
-    color: #666;
-}
 
-#content{
-    width: 960px;
-    border: 1px solid #ccc;
-    margin: 0 auto;
-    padding: 20px;
-    border-top: #83cd39 3px solid;
-}
-
-img {
-    max-width: 100%;
-}
-.blog-info{
-    background: #666;
-    padding: 4px;
-    text-transform: uppercase;
-    color: #fff;
+.logo-container{
+    width: 100%;
+    height: 90px;
+    background: #8BC34A;
 }
 
 .logo{
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
+    position: absolute;
+    top: 19px;
+    left: 100px;
+    width: 250px;
+    height: 70px;
+    background: #ECEFF1;
+    border-radius: 5px;
 }
-
 .logo-text {
     font-size: 3em;
     position: absolute;
-    top: 50px;
-    left: 220px;
+    top: 27px;
+    left: 125px;
 }
 
 .left {
-    color: #83cd39;
+    color: #8BC34A;
 }
 
 ul {
@@ -56,6 +40,7 @@ p {
 
 p {
     margin: 0;
+    width: 100%;
 }
 
 a {
@@ -64,7 +49,6 @@ a {
 }
 
 nav {
-    overflow: auto;
     height: 40px;
     padding: 20px 0 0 10px;
     font-size: 18px;
@@ -85,7 +69,7 @@ nav a {
 
 nav a.current,
 a:hover {
-    background: #83cd29;
+    background: #8BC34A;
     color: #000;
 }
 
@@ -101,9 +85,7 @@ a:hover {
 }
 
 .blog-post {
-    margin: 20px auto;
-    padding: 20px;
-    border-top: #83cd39 3px solid;
+    margin: 0 auto;
 }
 
 .form-group {

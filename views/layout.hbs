@@ -6,33 +6,42 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Node Blog</title>
+	<link rel="stylesheet" href="../stylesheets/normalize.css">
+	<link rel="stylesheet" href="../stylesheets/skeleton.css">
 	<link rel="stylesheet" href="../stylesheets/style.css">
 
 	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 </head>
 
 <body>
-	<div id="navigation">
-		<img src="../images/image.jpg" class="logo">
-		<p class="logo-text"><span class="left">Node</span>Blog</p>
-		<nav>
-			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/posts/new">Create New Blog Post</a></li>
-		        <li><a href="/categories/new">Add Category</a></li>
-			</ul>
-		</nav>
-	</div>
-	<div id="content">
-		{{!--{{#if success.msg}}
-        <div class="alert">{{success.msg}}</div>
-        {{/if}} {{#if error.msg}}
-        <div class="alert">{{error.msg}}</div>
-        {{/if}} {{#if error}}
-        <div class="alert">{{error}}</div>
-        {{/if}} --}}
-   <!-- Where content from other layouts appear-->
-    {{{body}}}
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<div class="logo-container">
+					<div class="logo"></div>
+					<p class="logo-text"><span class="left">Node</span>Blog</p>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li><a href="/posts/new">Create New Blog Post</a></li>
+						<li><a href="/categories/new">Add Category</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="row">
+			{{!--{{#if success.msg}}
+			<div class="alert">{{success.msg}}</div>
+			{{/if}} {{#if error.msg}}
+			<div class="alert">{{error.msg}}</div>
+			{{/if}} {{#if error}}
+			<div class="alert">{{error}}</div>
+			{{/if}} --}}
+			<!-- Where content from other layouts appear-->
+			{{{body}}}
+		</div>
 	</div>
 </body>
 
