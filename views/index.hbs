@@ -1,21 +1,21 @@
 <div class="nine columns">
   {{#each posts }}
   <div class="blog-post">
-    <h3><span>{{title}}</span></h2>
+    <h3><span>{{title}}</span></h3>
     <p class="lead">by {{author}} in {{category}}</p>
     <p>Posted on {{formatDate date "long"}}</p>
-    <img src="/images/uploads/{{blogImage}}" width="710" height="300" />
+    <img class="u-full-width" src="/images/uploads/{{blogImage}}"/>
     <p>{{{ truncate content}}}</p>
-    <p><a href="/posts/{{_id}}" class="read-more">Read More</a></p>
+    <p><a href="/posts/{{_id}}" class="button button-main">Read More</a></p>
   </div>
   {{/each}}
 </div>
 
-<div class="three columns categoryMenu">
+{{!--<div class="three columns categoryMenu">
   <h3>Categories</h3>
   <ul>
     {{#each categories}}
     <li>{{categoryName}}</li>
     {{/each}}
   </ul>
-</div>
+</div>--}}

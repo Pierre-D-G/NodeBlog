@@ -1,5 +1,4 @@
-var express = require('express');
-path = require('path'),
+var express = require('express'),
   favicon = require('serve-favicon'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
@@ -9,7 +8,7 @@ path = require('path'),
   mongo = require('mongodb'),
   db = require('monk')('localhost/nodeblog'),
   multer = require('multer'),
-  path = require('path');
+  path = require('path'),
   flash = require('connect-flash'),
   moment = require('moment'),
   exphbs = require('express-handlebars');

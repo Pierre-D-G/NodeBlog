@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
+var multer = require('multer');
 
 var db = require('monk')('localhost/nodeblog');
 
