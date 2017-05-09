@@ -64,6 +64,7 @@ label{
     text-transform: uppercase;
 }
 
-.img-responsive{
-    height: fit-content;
+.blog-post{
+    margin-bottom: 20px;
 }
+

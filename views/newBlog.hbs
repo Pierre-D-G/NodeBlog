@@ -1,46 +1,48 @@
-<div class="col-md-12 newBlog">
-  <form role="form" action="posts/new" method="POST" enctype="multipart/form-data">
+<div class="row">
+  <div class="col-md-12 ">
+    <form role="form" action="/posts/new" method="POST" enctype="multipart/form-data">
 
-    <div class="form-group">
-      <!-- Blog Post Title-->
-      <label for="title" class="control-label">Title</label>
-      <input id="title" type="text" name="title" class="form-control" placeholder="Blog Title">
-      <p class="help-block">Enter the title of your blog post</p>
-    </div>
-    <div class="form-group">
-      <!-- Category-->
-      <label for="category" class="control-label">Category</label>
-      <select id="category" name="category">
+      <div class="form-group">
+        <!-- Blog Post Title-->
+        <label for="title" class="control-label">Title</label>
+        <input id="title" type="text" name="title" class="form-control" placeholder="Blog Title">
+        <p class="help-block">Enter the title of your blog post</p>
+      </div>
+      <div class="form-group">
+        <!-- Category-->
+        <label for="category" class="control-label">Category</label>
+        <select id="category" name="category">
         {{#each categories}}
             <option value="{{categoryName}}">{{categoryName}}</option>
          {{/each}}
       </select>
-      <p class="help-block">Enter the category of your blog post (e.g Finance,Technology,Fashion)</p>
-    </div>
-    <div class="form-group">
-      <!-- Author-->
-      <label for="author" class="control-label">Author</label>
-      <input id="author" type="text" name="author" class="form-control" placeholder="John Doe">
-      <p class="help-block">Enter your name</p>
-    </div>
-    <div class="form-group">
-      <!-- Blog Content-->
-      <label for="editor1" class="control-label">Blog Post</label>
-      <textarea name="content" id="editor1"></textarea>
-      <p class="help-block">Enter your blog post here</p>
-    </div>
-    <!-- Blog Image -->
-    <div class="form-group">
-      <label for="image" class="control-label">Blog Image</label>
-      <input id="image" type="file" name="blogImage">
-      <p class="help-block">Upload your blog image</p>
-    </div>
-    <div class="form-group">
-      <!-- Submit Button-->
-      <button type="submit" class="btn button-main">Save Blog</button>
-    </div>
-  </form>
-  <script>
-    CKEDITOR.replace('editor1')
-  </script>
+        <p class="help-block">Enter the category of your blog post (e.g Finance,Technology,Fashion)</p>
+      </div>
+      <div class="form-group">
+        <!-- Author-->
+        <label for="author" class="control-label">Author</label>
+        <input id="author" type="text" name="author" class="form-control" placeholder="John Doe">
+        <p class="help-block">Enter your name</p>
+      </div>
+      <div class="form-group">
+        <!-- Blog Content-->
+        <label for="editor1" class="control-label">Blog Post</label>
+        <textarea name="content" id="editor1"></textarea>
+        <p class="help-block">Enter your blog post here</p>
+      </div>
+      <!-- Blog Image -->
+      <div class="form-group">
+        <label for="image" class="control-label">Blog Image</label>
+        <input id="image" type="file" name="blogImage">
+        <p class="help-block">Upload your blog image</p>
+      </div>
+      <div class="form-group">
+        <!-- Submit Button-->
+        <button type="submit" class="btn button-main">Save Blog</button>
+      </div>
+    </form>
+    <script>
+      CKEDITOR.replace('editor1')
+    </script>
+  </div>
 </div>

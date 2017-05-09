@@ -1,12 +1,15 @@
 {{#each posts}}
-<div class="col-md-6">
-    <img src="/images/uploads/{{blogImage}}" class="img-responsive">
-</div>
-<div class="col-md-6">
-    <h1>{{title}}</h1>
-    <h3>Posted in {{category}}</h3>
-    <h5>{{formatDate date "long"}}</h5>
-    <p>{{{truncate content}}}</p>
-    <a href="/posts/{{_id}}" class="btn button-main">Read More</a>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <img src="/images/uploads/{{blogImage}}" class="img-responsive">
+    </div>
+    <div class="col-md-6">
+        <h1>{{title}}</h1>
+        <h3>Posted in <a href="/categories/show/{{category}}">{{category}}</a></h3>
+        <h5>{{formatDate date "long"}}</h5>
+        <p>{{{truncate content}}}</p>
+        <a href="/posts/{{_id}}" class="btn button-main">Read More</a>
+    </div>
 </div>
 {{/each}}
