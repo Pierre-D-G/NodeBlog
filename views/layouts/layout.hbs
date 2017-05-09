@@ -1,44 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Node Blog</title>
-	<link rel="stylesheet" href="../stylesheets/normalize.css">
-	<link rel="stylesheet" href="../stylesheets/skeleton.css">
-	<link rel="stylesheet" href="../stylesheets/style.css">
-
-	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node Blog</title>
+    <link rel="stylesheet" href="../stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 </head>
 
 <body>
-	<div class="logo-container u-cf">
-		<div class="logo">
-			<p class="logo-text"><span class="left">Node</span>Blog</p>
-		</div>
-	</div>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/posts/new">Create New Blog Post</a></li>
-			<li><a href="/categories/new">Add Category</a></li>
-		</ul>
-	</nav>
-	<div class="container">
-		<div class="row">
-			{{!--{{#if success.msg}}
-			<div class="alert">{{success.msg}}</div>
-			{{/if}} {{#if error.msg}}
-			<div class="alert">{{error.msg}}</div>
-			{{/if}} {{#if error}}
-			<div class="alert">{{error}}</div>
-			{{/if}} --}}
-			<!-- Where content from other layouts appear-->
-			{{{body}}}
-		</div>
-	</div>
+    <div class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <div class="logo">
+                        <span class="left">Node</span>Blog
+                    </div></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/posts/new">Create Blog</a>
+                    </li>
+                    <li>
+                        <a href="/categories/new">Create Category</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well">
+                    <p>Sort By Category</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {{{body}}}
+        </div>
+    </div>
+
+    <script src="../javascripts/jquery-3.2.0.min.js"></script>
+    <script src="../javascripts/bootstrap.min.js"></script>
+
+
 </body>
 
 </html>

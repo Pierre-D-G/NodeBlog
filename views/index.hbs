@@ -1,21 +1,12 @@
-<div class="nine columns">
-  {{#each posts }}
-  <div class="blog-post">
-    <h3><span>{{title}}</span></h3>
-    <p class="lead">by {{author}} in {{category}}</p>
-    <p>Posted on {{formatDate date "long"}}</p>
-    <img class="u-full-width" src="/images/uploads/{{blogImage}}"/>
-    <p>{{{ truncate content}}}</p>
-    <p><a href="/posts/{{_id}}" class="button button-main">Read More</a></p>
-  </div>
-  {{/each}}
+{{#each posts}}
+<div class="col-md-6">
+    <img src="/images/uploads/{{blogImage}}" class="img-responsive">
 </div>
-
-{{!--<div class="three columns categoryMenu">
-  <h3>Categories</h3>
-  <ul>
-    {{#each categories}}
-    <li>{{categoryName}}</li>
-    {{/each}}
-  </ul>
-</div>--}}
+<div class="col-md-6">
+    <h1>{{title}}</h1>
+    <h3>Posted in {{category}}</h3>
+    <h5>{{formatDate date "long"}}</h5>
+    <p>{{{truncate content}}}</p>
+    <a href="/posts/{{_id}}" class="btn button-main">Read More</a>
+</div>
+{{/each}}
