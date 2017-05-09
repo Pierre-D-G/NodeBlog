@@ -1,12 +1,33 @@
+body{
+    background: #ccc;
+}
 /*NAVIGATION*/
+.banner {
+    background: url(/images/banner.jpeg) no-repeat 0px 0px;
+    background-size: cover;
+    min-height: 340px;
+}
 
-div.navbar.navbar-inverse{
+@media (max-width: 768px){
+ .img-responsive{
+     width: 100%;
+     height: auto;
+ }
+}
+div.navbar.navbar-default{
     margin-bottom: 0;
     color: #fff;
+    background: none;
+    border: none;
 }
-.navbar-nav.navbar-right>li>a:hover {
+.navbar-nav.navbar-right>li>a{
     background: #8BC34A;
-    color: #000;
+    color: #fff;
+}
+
+.navbar-nav.navbar-right>li>a:hover {
+    background: #0BC34A;
+    color: #fff;
 }
 
 /*LOGO*/
@@ -64,7 +85,12 @@ label{
     text-transform: uppercase;
 }
 
-.blog-post{
-    margin-bottom: 20px;
+.blog{
+    width: 100%;
+}
+
+.img-responsive{
+    max-width: 780px;
+    max-height: 300px;
 }
 

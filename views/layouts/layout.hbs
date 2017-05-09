@@ -11,10 +11,11 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+    <div class="banner">
+        <div class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -22,25 +23,31 @@
                         </button>
                     <div class="logo">
                         <span class="left">Node</span>Blog
-                    </div></a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/posts/new">Create Blog</a>
-                    </li>
-                    <li>
-                        <a href="/categories/new">Create Category</a>
-                    </li>
-                </ul>
+                    </div>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="/posts/new">Create Blog</a>
+                        </li>
+                        <li>
+                            <a href="/categories/new">Create Category</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
     <div class="container">
-        {{{body}}}
+        <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    {{{body}}}
+                </div>
+        </div>
     </div>
 
     <script src="/javascripts/jquery-3.2.0.min.js"></script>

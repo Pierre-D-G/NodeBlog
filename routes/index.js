@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
   var posts = db.get('posts');
   posts.find({}, {}, function (err, posts) {
     res.render('index', {
-      "posts": posts
+      "posts": posts,
     });
   });
 });
