@@ -30,6 +30,6 @@ Blog post page with comments
 
 ~~Add posts and categories~~
 
-View Posts by categories
+~~View Posts by categories
 
 Single post and comments
