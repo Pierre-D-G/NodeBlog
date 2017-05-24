@@ -88,4 +88,13 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
   }
 });
 
+router.get('/show/:id', function(req, res, next){
+  var posts = db.get('posts');
+    posts.findById(req.params.id, function(err, post){
+      res.render('show',{
+        "post": post
+      });
+  });
+});
+
 module.exports = router;

@@ -1,12 +1,9 @@
 {{#each posts}}
-<hr>
-<img src="/images/uploads/{{blogImage}}" class="img-responsive thumbnail" width="900px" height="300px">
-<h1>{{title}}</h1>
-<h3>Posted in <a href="/categories/show/{{category}}">{{category}}</a> by {{author}}</h3>
-<h5>{{formatDate date "long"}}</h5>
-<p>{{{truncate content}}}</p>
-<a href="/posts/{{_id}}" class="btn button-main">Read More</a> {{/each}}
-
-{{#each categories}}
- <h1>{{category}}</h1>
+<div class="ui segment">
+    <img class="ui left floated medium image" src="/images/uploads/{{blogImage}}">
+    <h2>{{title}}</h2>
+    <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
+    <p>{{{truncate content}}}</p>
+    <a href="/posts/show/{{_id}}" class="ui button scheme-button">Read More</a>
+</div>
 {{/each}}

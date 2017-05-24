@@ -1,59 +1,71 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Node Blog</title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/responsive-nav.css">
+    <link rel="stylesheet" href="/stylesheets/semantic.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/responsive-nav.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
     <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+    <title>Nodeblog</title>
 </head>
 
 <body>
-    <div class="banner">
-        <div class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    <div class="logo">
-                        <span class="left">Node</span>Blog
+    <div class="navigation">
+        <a href="#home" class="logo" data-scroll><span class="left">Node</span><span class="right">Blog</span></a>
+        <nav class="nav-collapse">
+            <ul>
+                <li><a href="/">Blogs</a></li>
+                <li><a href="/posts/new">New Blog Post</a></li>
+                <li><a href="/categories/new">New Category</a></li>     
+            </ul>
+        </nav>
+    </div>
+
+    <section class="main">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <div class="four wide column">
+                    <div class="ui segment">
+                        <img class="ui small centered image" src="/images/blog-profile.jpg">
+                        <hr>
+                        <p>Hi,I am Gamil and welcome to my blog template.Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem
+                            aliquip detraxit at.</p>
+                        <div class="ui center aligned segment">
+                            <a href="https://facebook.com" class="ui circular facebook icon button">
+                                <i class="facebook icon"></i>
+                            </a>
+                            <a href="https://www.twitter.com" class="ui circular twitter icon button">
+                                <i class="twitter icon"></i>
+                            </a>
+                            <a href="https://www.linkedin.com" class="ui circular linkedin icon button">
+                                <i class="linkedin icon"></i>
+                            </a>
+                            <a href="https://www.instagram.com" class="ui circular instagram icon button">
+                                <i class="instagram icon"></i>
+                            </a>
+                        </div>
                     </div>
-                    </a>
                 </div>
-                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="/posts/new">Create Blog</a>
-                        </li>
-                        <li>
-                            <a href="/categories/new">Create Category</a>
-                        </li>
-                    </ul>
+                <div class="twelve wide column">
+                    {{{body}}}
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    {{{body}}}
-                </div>
-        </div>
-    </div>
+    </section>
 
+
+
+
+    <script>
+        var nav = responsiveNav(".nav-collapse");
+    </script>
     <script src="/javascripts/jquery-3.2.0.min.js"></script>
-    <script src="/javascripts/bootstrap.min.js"></script>
-
-
+    <script src="/javascripts/semantic.min.js"></script>
 </body>
 
 </html>
