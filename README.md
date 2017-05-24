@@ -32,7 +32,7 @@ Blog post page with comments
 
 ~~View Posts by categories~~
 
-~~Single blog post
+~~Single blog post~~
 
 Blog comments
 
