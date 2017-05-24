@@ -32,4 +32,8 @@ Blog post page with comments
 
 ~~View Posts by categories~~
 
-Single post and comments
+~~Single blog post
+
+Blog comments
+
+Authorization
