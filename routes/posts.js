@@ -76,14 +76,6 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "content": content,
       "date": date,
       "blogImage": mainBlogImageName,
-      // function (err, post) {
-      //   if (err) {
-      //     res.render('error')
-      //   } else {
-          // req.flash('success', 'Blog Post Submitted Successfully!');
-          // res.redirect('/');
-      //   }
-      // }
     });
     req.flash('success', 'Blog Post Submitted Successfully!');
     res.redirect('/');
@@ -92,7 +84,7 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
 
 router.get('/show/:id', function (req, res, next) {
   var posts = db.get('posts');
-  posts.findById(req.params.id, function (err, post) {
+  posts.findOne(req.params.id, function (err, post) {
     res.render('show', {
       "post": post
     });
@@ -117,7 +109,7 @@ router.post('/newcomment', function (req, res, next) {
   var errors = req.validationErrors();
   if (errors) {
     var posts = db.get('posts');
-    posts.findById(postId, function (err, post) {
+    posts.findOne(postId, function (err, post) {
       res.render('show', {
         "errors": errors,
         "post": post
@@ -137,19 +129,13 @@ router.post('/newcomment', function (req, res, next) {
     posts.update({
       "_id": postId
     }, {
-      $push:{
+      $push: {
         "comments": comment
       },
-      function(err, doc){
-        if(err){ 
-          throw err;
-        }else{
-          req.flash('success', "Your comment has been added successfully!")
-          res.location('/posts/show'+postId);
-          res.redirect('/posts/show'+postId);
-        }
-      }
     });
+    req.flash('success', "Your comment has been added successfully!")
+    res.location('/posts/show/' + postId);
+    res.redirect('/posts/show/' + postId);
   }
 });
 

@@ -91,7 +91,7 @@ app.use(session({
 // Flash Messages
 app.use(flash());
 app.use(function (req, res, next) {
-  res.locals.messages = require('express-messages')(req, res);
+  res.locals.success = req.flash('success')
   next();
 });
 
@@ -106,7 +106,6 @@ app.use('/', index);
 app.use('/posts', posts);
 app.use('/categories', categories);
 
-// helpers
 
 
 // catch 404 and forward to error handler

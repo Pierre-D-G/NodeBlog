@@ -21,7 +21,7 @@
             <ul>
                 <li><a href="/">Blogs</a></li>
                 <li><a href="/posts/new">New Blog Post</a></li>
-                <li><a href="/categories/new">New Category</a></li>     
+                <li><a href="/categories/new">New Category</a></li>
             </ul>
         </nav>
     </div>
@@ -33,8 +33,8 @@
                     <div class="ui segment">
                         <img class="ui small centered image" src="/images/blog-profile.jpg">
                         <hr>
-                        <p>Hi,I am Gamil and welcome to my blog template.Te eum doming eirmod, nominati pertinacia argumentum ad his. Ex eam alia facete scriptorem, est autem
-                            aliquip detraxit at.</p>
+                        <p>Hi,I am Gamil and welcome to my blog template.Te eum doming eirmod, nominati pertinacia argumentum
+                            ad his. Ex eam alia facete scriptorem, est autem aliquip detraxit at.</p>
                         <div class="ui center aligned segment">
                             <a href="https://facebook.com" class="ui circular facebook icon button">
                                 <i class="facebook icon"></i>
@@ -52,6 +52,13 @@
                     </div>
                 </div>
                 <div class="twelve wide column">
+                    {{#if success}}
+                    <div class="ui success message">
+                        <div class="header">
+                           {{success}}
+                        </div>
+                    </div>
+                    {{/if}} 
                     {{{body}}}
                 </div>
             </div>

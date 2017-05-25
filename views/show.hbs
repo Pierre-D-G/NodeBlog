@@ -4,7 +4,8 @@
     <h2>{{title}}</h2>
     <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
     <p>{{{content}}}</p>
-    <a href="/" class="ui button scheme-button">Back</a> {{/post}}
+    <a href="/" class="ui button scheme-button">Back</a> 
+   
     <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
         {{#each comments}}
@@ -12,7 +13,7 @@
             <div class="content">
                 <a class="author">{{commentorName}}</a>
                 <div class="metadata">
-                    <span class="date">{{truncate commentDate "long"}}</span>
+                    <span class="date">{{formatDate commentDate "long"}}</span>
                 </div>
                 <div class="text">
                     {{{commentBody}}}
@@ -20,7 +21,8 @@
             </div>
         </div>
         {{/each}}
-        <hr>
+        {{/post}}
+        <hr> {{#if errors}}
         <div class="ui error message">
             <div class="header">
                 There were some errors with your blog submission
@@ -31,6 +33,7 @@
                 {{/each}}
             </ul>
         </div>
+        {{/if}}
         <form class="ui reply form" action="/posts/newcomment" method="POST">
             <div class="field">
                 <input type="hidden" name="postId" value="{{post._id}}">
@@ -47,9 +50,9 @@
                 <label>Content</label>
                 <textarea name="commentBody" id="body"></textarea>
             </div>
-            <div class="ui scheme-button labeled submit icon button">
+            <button type="submit" class="ui scheme-button labeled icon button">
                 <i class="icon edit"></i> Add Comment
-            </div>
+            </button>
         </form>
     </div>
 </div>

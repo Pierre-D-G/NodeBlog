@@ -27,29 +27,18 @@ router.post('/new', function (req, res, next) {
         // Submitting data to database
         categories.insert({
             "categoryName": categoryName,
-            // function (err, category) {
-            //     if (err) {
-            //         res.render('error')
-            //     } else {
-            //         console.log(req.flash);
-            //         console.log('success');
-            //         consoel.log(success);
-            //         console.log('messages');
-            //         console.log(messages);
-            //         req.flash('success', 'Category Added Successfully!');
-            //         res.redirect('/');
-            //     }
-            // }
         });
-                    req.flash('success', 'Category Added Successfully!');
-                    res.redirect('/');
+        req.flash('success', 'Category Added Successfully!');
+        res.redirect('/');
     }
 });
 
-router.get('/show/:category', function(req, res, next){
+router.get('/show/:category', function (req, res, next) {
     var db = req.db;
     var posts = db.get('posts');
-    posts.find({category: req.params.category}, {}, function(err, posts){
+    posts.find({
+        category: req.params.category
+    }, {}, function (err, posts) {
         res.render('index', {
             "posts": posts
         });
