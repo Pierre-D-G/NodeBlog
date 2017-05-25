@@ -1,3 +1,15 @@
+{{#if errors}}
+<div class="ui error message">
+    <div class="header">
+    There were some errors with your blog submission
+    </div>
+    <ul class="list">
+        {{#each errors}}
+            <li>{{msg}}</li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
 <div class="ui segment">
     <form class="ui form" action="/posts/new" method="POST" enctype="multipart/form-data">
         <div class="field">

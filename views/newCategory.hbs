@@ -1,3 +1,16 @@
+{{#if errors}}
+<div class="ui error message">
+    <div class="header">
+    There were some errors with your category submission
+    </div>
+    <ul class="list">
+        {{#each errors}}
+            <li>{{msg}}</li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+
 <div class="ui segment">
     <form class="ui form" action="/categories/new" method="POST">
         <div class="field">

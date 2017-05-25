@@ -76,25 +76,81 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "content": content,
       "date": date,
       "blogImage": mainBlogImageName,
-      function (err, post) {
-        if (err) {
-          res.render('error')
-        } else {
+      // function (err, post) {
+      //   if (err) {
+      //     res.render('error')
+      //   } else {
           // req.flash('success', 'Blog Post Submitted Successfully!');
-          res.redirect('/');
+          // res.redirect('/');
+      //   }
+      // }
+    });
+    req.flash('success', 'Blog Post Submitted Successfully!');
+    res.redirect('/');
+  }
+});
+
+router.get('/show/:id', function (req, res, next) {
+  var posts = db.get('posts');
+  posts.findById(req.params.id, function (err, post) {
+    res.render('show', {
+      "post": post
+    });
+  });
+});
+
+/*Post comments data*/
+router.post('/newcomment', function (req, res, next) {
+  /* Grabbing form data */
+  var commentorName = req.body.commentorName,
+    commentorEmail = req.body.commentorEmail,
+    commentBody = req.body.commentBody,
+    postId = req.body.postId,
+    commentDate = new Date();
+
+  // Form validation
+  req.checkBody('commentorName', 'Please enter your name').notEmpty();
+  req.checkBody('commentorEmail', 'Please enter your email address').notEmpty();
+  req.checkBody('commentBody', 'You cannot leave a blank comment').notEmpty();
+
+  // Form Validation error handling
+  var errors = req.validationErrors();
+  if (errors) {
+    var posts = db.get('posts');
+    posts.findById(postId, function (err, post) {
+      res.render('show', {
+        "errors": errors,
+        "post": post
+      });
+    });
+
+  } else {
+    var comment = {
+      "commentorName": commentorName,
+      "commentorEmail": commentorEmail,
+      "commentBody": commentBody,
+      "commentDate": commentDate
+    }
+
+    var posts = db.get('posts');
+
+    posts.update({
+      "_id": postId
+    }, {
+      $push:{
+        "comments": comment
+      },
+      function(err, doc){
+        if(err){ 
+          throw err;
+        }else{
+          req.flash('success', "Your comment has been added successfully!")
+          res.location('/posts/show'+postId);
+          res.redirect('/posts/show'+postId);
         }
       }
     });
   }
-});
-
-router.get('/show/:id', function(req, res, next){
-  var posts = db.get('posts');
-    posts.findById(req.params.id, function(err, post){
-      res.render('show',{
-        "post": post
-      });
-  });
 });
 
 module.exports = router;

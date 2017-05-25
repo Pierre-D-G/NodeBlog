@@ -27,15 +27,22 @@ router.post('/new', function (req, res, next) {
         // Submitting data to database
         categories.insert({
             "categoryName": categoryName,
-            function (err, category) {
-                if (err) {
-                    res.render('error')
-                } else {
-                    // req.flash('success', 'Category Added Successfully!');
-                    res.redirect('/');
-                }
-            }
+            // function (err, category) {
+            //     if (err) {
+            //         res.render('error')
+            //     } else {
+            //         console.log(req.flash);
+            //         console.log('success');
+            //         consoel.log(success);
+            //         console.log('messages');
+            //         console.log(messages);
+            //         req.flash('success', 'Category Added Successfully!');
+            //         res.redirect('/');
+            //     }
+            // }
         });
+                    req.flash('success', 'Category Added Successfully!');
+                    res.redirect('/');
     }
 });
 

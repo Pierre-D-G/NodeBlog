@@ -4,6 +4,52 @@
     <h2>{{title}}</h2>
     <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
     <p>{{{content}}}</p>
-    <a href="/" class="ui button scheme-button">Back</a>
+    <a href="/" class="ui button scheme-button">Back</a> {{/post}}
+    <div class="ui comments">
+        <h3 class="ui dividing header">Comments</h3>
+        {{#each comments}}
+        <div class="comment">
+            <div class="content">
+                <a class="author">{{commentorName}}</a>
+                <div class="metadata">
+                    <span class="date">{{truncate commentDate "long"}}</span>
+                </div>
+                <div class="text">
+                    {{{commentBody}}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        <hr>
+        <div class="ui error message">
+            <div class="header">
+                There were some errors with your blog submission
+            </div>
+            <ul class="list">
+                {{#each errors}}
+                <li>{{msg}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        <form class="ui reply form" action="/posts/newcomment" method="POST">
+            <div class="field">
+                <input type="hidden" name="postId" value="{{post._id}}">
+            </div>
+            <div class="field">
+                <label>Name</label>
+                <input type="text" name="commentorName" placeholder="Name">
+            </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="email" name="commentorEmail" placeholder="Email  Address">
+            </div>
+            <div class="field">
+                <label>Content</label>
+                <textarea name="commentBody" id="body"></textarea>
+            </div>
+            <div class="ui scheme-button labeled submit icon button">
+                <i class="icon edit"></i> Add Comment
+            </div>
+        </form>
+    </div>
 </div>
-{{/post}}
