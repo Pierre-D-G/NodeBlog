@@ -4,12 +4,15 @@
     <h2>{{title}}</h2>
     <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
     <p>{{{content}}}</p>
-    <a href="/" class="ui button scheme-button">Back</a> 
-   
+    <a href="/" class="ui button scheme-button">Back</a>
+
     <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
         {{#each comments}}
         <div class="comment">
+            <a class="avatar">
+                <img src="/images/avatars/{{commentorAvatar}}">
+            </a>
             <div class="content">
                 <a class="author">{{commentorName}}</a>
                 <div class="metadata">
@@ -20,12 +23,11 @@
                 </div>
             </div>
         </div>
-        {{/each}}
-        {{/post}}
+        {{/each}} {{/post}}
         <hr> {{#if errors}}
         <div class="ui error message">
             <div class="header">
-                There were some errors with your blog submission
+                There were some errors with your comment submission
             </div>
             <ul class="list">
                 {{#each errors}}
@@ -34,6 +36,7 @@
             </ul>
         </div>
         {{/if}}
+        <h3 class="ui dividing header">Add a comment</h3>
         <form class="ui reply form" action="/posts/newcomment" method="POST">
             <div class="field">
                 <input type="hidden" name="postId" value="{{post._id}}">
@@ -43,8 +46,11 @@
                 <input type="text" name="commentorName" placeholder="Name">
             </div>
             <div class="field">
-                <label>Email</label>
-                <input type="email" name="commentorEmail" placeholder="Email  Address">
+                <label>Avatar</label>
+                <select name="avatar">
+                    <option value="matt.jpg">Male Avatar</option>
+                    <option value="jenny.jpg">Female Avatar</option>
+                </select>
             </div>
             <div class="field">
                 <label>Content</label>

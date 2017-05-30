@@ -95,14 +95,13 @@ router.get('/show/:id', function (req, res, next) {
 router.post('/newcomment', function (req, res, next) {
   /* Grabbing form data */
   var commentorName = req.body.commentorName,
-    commentorEmail = req.body.commentorEmail,
+    commentorAvatar = req.body.avatar,
     commentBody = req.body.commentBody,
     postId = req.body.postId,
     commentDate = new Date();
 
   // Form validation
   req.checkBody('commentorName', 'Please enter your name').notEmpty();
-  req.checkBody('commentorEmail', 'Please enter your email address').notEmpty();
   req.checkBody('commentBody', 'You cannot leave a blank comment').notEmpty();
 
   // Form Validation error handling
@@ -119,7 +118,7 @@ router.post('/newcomment', function (req, res, next) {
   } else {
     var comment = {
       "commentorName": commentorName,
-      "commentorEmail": commentorEmail,
+      "commentorAvatar": commentorAvatar,
       "commentBody": commentBody,
       "commentDate": commentDate
     }

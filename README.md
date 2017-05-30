@@ -34,6 +34,14 @@ Blog post page with comments
 
 ~~Single blog post~~
 
-Blog comments
+~~Blog comments~~
 
-Authorization
+## Future Development
+
+Implement Content Manage System
+
+Implement Social Media Sharing
+
+
+
+
