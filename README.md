@@ -16,11 +16,11 @@ Blog post page with comments
 
 ### Requires mongodb installed on your device to work
 
- 1. Download or clone the repository with: git clone https://github.com/Pierre-D-G/NodeBlog.git .
+* Download or clone the repository with: git clone https://github.com/Pierre-D-G/NodeBlog.git .
 
- 2.Install required packages with: npm install
+* Install required packages with: npm install
 
- 3. Start mongodb with: mongod and Run the app with: npm start
+ * Start mongodb with: mongod and Run the app with: npm start
 
 ## TODO
 
@@ -38,9 +38,13 @@ Blog post page with comments
 
 ## Future Development
 
-Implement Content Manage System
+Implement Content Management System For Blog Owner
 
-Implement Social Media Sharing
+Implement Social Media Sharing Of Blog Articles
+
+Social Media Login and Commenting
+
+
 
 
 

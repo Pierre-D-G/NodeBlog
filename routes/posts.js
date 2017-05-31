@@ -104,7 +104,7 @@ router.post('/newcomment', function (req, res, next) {
   req.checkBody('commentorName', 'Please enter your name').notEmpty();
   req.checkBody('commentBody', 'You cannot leave a blank comment').notEmpty();
 
-  // Form Validation error handling
+  // Form Validation error handling and entering data into database
   var errors = req.validationErrors();
   if (errors) {
     var posts = db.get('posts');
