@@ -20,7 +20,17 @@ Blog post page with comments
 
 * Install required packages with: npm install
 
- * Start mongodb with: mongod and Run the app with: npm start
+* Start mongodb with: mongod 
+
+* To seed the database run:
+
+     mongoimport --db nodeblog --collection posts --drop --file posts-seed.json --jsonArray 
+
+    AND 
+
+    mongoimport --db nodeblog --collection categories --drop --file categories-seed.json --jsonArray
+
+* Run the app with: npm start
 
 ## TODO
 
@@ -35,6 +45,10 @@ Blog post page with comments
 ~~Single blog post~~
 
 ~~Blog comments~~
+
+Edit Blog Posts
+
+Delete Blog Posts
 
 ## Future Development
 
