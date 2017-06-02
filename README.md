@@ -4,13 +4,17 @@ Node Express Mongodb Blog Website
 
 ## Features
 
-Homepage for blog posts
+A homepage which displays all blog posts.
 
-Add posts and categories to the posts
+Forms to add a new blog posts,categories and comments
 
-View posts by category
+A page which displays blog posts which have the same category
 
-Blog post page with comments
+A page which displays all the content of a blog post including comments
+
+Editing and deleting already submitted blog posts
+
+Access Control
 
 ## Usage
 
@@ -18,19 +22,27 @@ Blog post page with comments
 
 * Download or clone the repository with: git clone https://github.com/Pierre-D-G/NodeBlog.git .
 
-* Install required packages with: npm install
+* Install required packages with: 
 
-* Start mongodb with: mongod 
+`$ npm install
+
+* Start mongodb with: 
+
+     $ mongod 
 
 * To seed the database run:
 
-     mongoimport --db nodeblog --collection posts --drop --file posts-seed.json --jsonArray 
+     $ mongoimport --db nodeblog --collection posts --drop --file posts-seed.json --jsonArray 
 
     AND 
 
-    mongoimport --db nodeblog --collection categories --drop --file categories-seed.json --jsonArray
+    $ mongoimport --db nodeblog --collection categories --drop --file categories-seed.json --jsonArray
 
-* Run the app with: npm start
+* Run the app with: 
+
+     $ npm start
+   
+* Using a browser,got to http://localhost:3000 to use the application
 
 ## TODO
 
@@ -44,19 +56,18 @@ Blog post page with comments
 
 ~~Single blog post~~
 
-~~Blog comments~~
+~~Blog post comments~~
 
 Edit Blog Posts
 
 Delete Blog Posts
 
-## Future Development
+Access Control:
 
-Implement Content Management System For Blog Owner
+* Admin Login
 
-Implement Social Media Sharing Of Blog Articles
+* Admin Only Access to create,edit,delete blogs and categories
 
-Social Media Login and Commenting
 
 
 
