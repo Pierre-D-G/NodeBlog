@@ -15,6 +15,7 @@
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+    "method-override": "^2.3.9",
     "moment": "*",
     "mongodb": "~2.2.26",
     "monk": "^4.0.0",

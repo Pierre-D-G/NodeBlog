@@ -4,7 +4,7 @@
     <h2>{{title}}</h2>
     <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
     <p>{{{content}}}</p>
-    <a href="/" class="ui button scheme-button">Back to Home Page</a>
+    <a class="ui scheme-button labelled icon button" href="/posts/edit/{{_id}}"><i class="icon edit"></i>Edit</a>
 
     <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
@@ -59,6 +59,7 @@
             <button type="submit" class="ui scheme-button labeled icon button">
                 <i class="icon edit"></i> Add Comment
             </button>
+            <a href="/" class="ui button scheme-button">Back to Home Page</a>
         </form>
     </div>
 </div>

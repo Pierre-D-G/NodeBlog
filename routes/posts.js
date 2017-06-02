@@ -138,4 +138,33 @@ router.post('/newcomment', function (req, res, next) {
   }
 });
 
+// Edit Blog Post
+router.get('/edit/:id', function (req, res, next) {
+  var categories = db.get('categories');
+  var posts = db.get('posts');
+  posts.findOne(req.params.id, function (err, post) {
+    categories.find({}, {}, function (err, category) {
+      res.render('edit', {
+        "category": category,
+        "post": post
+      });
+    });
+  });
+});
+// Update Blog
+router.put("/:id", upload.single('blogImage'), function(req, res, next){
+    var updatedPost = {
+      "author": req.body.author,
+      "title": req.body.title,
+      "category": req.body.category,
+      "content": req.body.content,
+      "date": new Date(),
+      "blogImage": req.file.filename
+    };
+    var posts = db.get('posts');
+    posts.findOneAndUpdate(req.params.id, updatedPost, function(editedPost){
+        req.flash('success', "Your blog post has been updated succesfully!")
+        res.render('/posts/show/' + req.params.id)
+    }); 
+});
 module.exports = router;

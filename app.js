@@ -9,6 +9,7 @@ var express = require('express'),
   db = require('monk')('localhost/nodeblog'),
   multer = require('multer'),
   path = require('path'),
+  methodOverride = require('method-override'),
   flash = require('connect-flash'),
   moment = require('moment'),
   exphbs = require('express-handlebars');
@@ -46,6 +47,7 @@ var hbs = exphbs.create({
 
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
+
 
 
 // uncomment after placing your favicon in /public
@@ -101,6 +103,7 @@ app.use(function (req, res, next) {
   next()
 });
 
+app.use(methodOverride("_method"));
 
 app.use('/', index);
 app.use('/posts', posts);

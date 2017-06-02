@@ -1,0 +1,53 @@
+{{#if errors}}
+<div class="ui error message">
+    <div class="header">
+        There were some errors with your blog submission
+    </div>
+    <ul class="list">
+        {{#each errors}}
+        <li>{{msg}}</li>
+        {{/each}}
+    </ul>
+</div>
+{{/if}}
+{{#post}}
+<div class="ui segment">
+    <h4>Edit {{title}}</h4>
+    <hr>
+    <form class="ui form" action="/posts/{{_id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="field">
+            <label>Author</label>
+            <input type="text" name="author" value="{{author}}">
+        </div>
+        <div class="field">
+            <label>Blog title</label>
+            <input type="text" name="title" value="{{title}}">
+        </div>
+        <div class="field">
+            <label>Category</label>
+            <select class="ui dropdown" name="category">
+                <option value="{{category}}">{{category}}</option>
+        {{/post}}
+                {{#each category}}<option value="{{categoryName}}">{{categoryName}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{#post}}
+        <div class="field">
+            <label>Blog Image</label>
+            <input type="file" name="blogImage">
+        </div>
+        <div class="field">
+            <label>Blog Content</label>
+            <textarea name="content" id="editor1">
+                {{content}}
+            </textarea>
+        </div>
+        <button class="ui button scheme-button" type="submit">Save</button>
+        <a href="/posts/show/{{_id}}" class="ui scheme-button button">Back</a>
+    </form>
+    <script>
+        CKEDITOR.replace('editor1')
+    </script>
+</div>
+{{/post}}
