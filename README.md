@@ -58,9 +58,9 @@ Access Control
 
 ~~Blog post comments~~
 
-Edit Blog Posts
+~~Edit Blog Posts~~
 
-Delete Blog Posts
+~~Delete Blog Posts~~
 
 Access Control:
 
