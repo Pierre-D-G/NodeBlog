@@ -49,7 +49,7 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
     var mainBlogImageName = req.file.filename
   } else {
 
-    var mainBlogImageName = 'noimage.png'
+    var mainBlogImageName = 'no-image.jpeg'
   }
   // Form validation
   req.checkBody('title', 'A blog title is required').notEmpty();
@@ -151,6 +151,7 @@ router.get('/edit/:id', function (req, res, next) {
     });
   });
 });
+
 // Update Blog
 router.put("/:id", upload.single('blogImage'), function(req, res, next){
     var updatedPost = {
@@ -167,4 +168,20 @@ router.put("/:id", upload.single('blogImage'), function(req, res, next){
         res.render('/posts/show/' + req.params.id)
     }); 
 });
+
+
+// Delete Blog Post
+
+router.delete('/:id', function(req, res, next){
+  var posts = db.get('posts');
+  posts.findOneAndDelete(req.params.id, function(err, deletedPost){
+    if(err){
+      console.log(err);
+    }else{
+      req.flash('success', "Blog was deleted successfully!");
+      res.redirect('/');
+    }
+  });
+});
+
 module.exports = router;
