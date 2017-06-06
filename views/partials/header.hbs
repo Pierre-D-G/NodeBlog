@@ -1,0 +1,16 @@
+  <div class="navigation">
+        <a href="#home" class="logo" data-scroll><span class="left">Node</span><span class="right">Blog</span></a>
+        <nav class="nav-collapse">
+            <ul>
+                <li><a href="/">Blogs</a></li>
+                
+                {{#if login}}
+                <li><a href="/posts/new">New Blog Post</a></li>
+                <li><a href="/categories/new">New Category</a></li>
+                <li><a href="/logout">Log Out</a></li>
+                {{else}}
+                <li><a href="/login">Login</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>

@@ -3,9 +3,12 @@ var router = express.Router();
 var mongo = require('mongodb');
 var db = require('monk')('localhost/nodeblog');
 
-router.get('/new', function (req, res, next) {
-    res.render('newCategory');
+var posts = db.get('posts');
+var categories = db.get('categories');
+var login = db.get('login');
 
+router.get('/new', isLoggedIn, function (req, res, next) {
+    res.render('newCategory');
 });
 
 
@@ -23,7 +26,6 @@ router.post('/new', function (req, res, next) {
             "categoryName": categoryName,
         });
     } else {
-        var categories = db.get('categories');
         // Submitting data to database
         categories.insert({
             "categoryName": categoryName,
@@ -34,8 +36,6 @@ router.post('/new', function (req, res, next) {
 });
 
 router.get('/show/:category', function (req, res, next) {
-    var db = req.db;
-    var posts = db.get('posts');
     posts.find({
         category: req.params.category
     }, {}, function (err, posts) {
@@ -46,3 +46,10 @@ router.get('/show/:category', function (req, res, next) {
 });
 
 module.exports = router;
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/')
+}

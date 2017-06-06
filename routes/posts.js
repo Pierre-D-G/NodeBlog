@@ -6,6 +6,10 @@ var path = require('path');
 
 var db = require('monk')('localhost/nodeblog');
 
+var posts = db.get('posts');
+var categories = db.get('categories');
+var login = db.get('login');
+
 /* saving the extention of the file uploaded */
 
 var storage = multer.diskStorage({
@@ -24,8 +28,7 @@ var upload = multer({
 /* Posts router */
 
 /* Create a new blog post route*/
-router.get('/new', function (req, res, next) {
-  var categories = db.get('categories');
+router.get('/new', isLoggedIn, function (req, res, next) {
   categories.find({}, {}, function (err, categories) {
     res.render('newBlog', {
       "categories": categories
@@ -66,8 +69,6 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
       "content": content
     });
   } else {
-    var posts = db.get('posts');
-
     // Submitting data to database
     posts.insert({
       "title": title,
@@ -83,7 +84,6 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
 });
 
 router.get('/show/:id', function (req, res, next) {
-  var posts = db.get('posts');
   posts.findOne(req.params.id, function (err, post) {
     res.render('show', {
       "post": post
@@ -107,7 +107,6 @@ router.post('/newcomment', function (req, res, next) {
   // Form Validation error handling and entering data into database
   var errors = req.validationErrors();
   if (errors) {
-    var posts = db.get('posts');
     posts.findOne(postId, function (err, post) {
       res.render('show', {
         "errors": errors,
@@ -123,8 +122,6 @@ router.post('/newcomment', function (req, res, next) {
       "commentDate": commentDate
     }
 
-    var posts = db.get('posts');
-
     posts.update({
       "_id": postId
     }, {
@@ -139,9 +136,7 @@ router.post('/newcomment', function (req, res, next) {
 });
 
 // Edit Blog Post
-router.get('/edit/:id', function (req, res, next) {
-  var categories = db.get('categories');
-  var posts = db.get('posts');
+router.get('/edit/:id', isLoggedIn, function (req, res, next) {
   posts.findOne(req.params.id, function (err, post) {
     categories.find({}, {}, function (err, category) {
       res.render('edit', {
@@ -162,7 +157,6 @@ router.put("/:id", upload.single('blogImage'), function(req, res, next){
       "date": new Date(),
       "blogImage": req.file.filename
     };
-    var posts = db.get('posts');
     posts.findOneAndUpdate(req.params.id, updatedPost, function(editedPost){
         req.flash('success', "Your blog post has been updated succesfully!")
         res.render('/posts/show/' + req.params.id)
@@ -173,7 +167,6 @@ router.put("/:id", upload.single('blogImage'), function(req, res, next){
 // Delete Blog Post
 
 router.delete('/:id', function(req, res, next){
-  var posts = db.get('posts');
   posts.findOneAndDelete(req.params.id, function(err, deletedPost){
     if(err){
       console.log(err);
@@ -185,3 +178,10 @@ router.delete('/:id', function(req, res, next){
 });
 
 module.exports = router;
+
+function isLoggedIn(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect('/')
+}

@@ -5,17 +5,6 @@
     <p>Posted by {{author}} on {{formatDate date "long"}} | <a href="/categories/show/{{category}}">{{category}}</a></p>
     <p>{{{content}}}</p>
     
-    <form class="ui  form" action="/posts/{{_id}}?_method=DELETE" method="POST">
-            <div class="field set">
-                 <a class="ui scheme-button labelled icon button" href="/posts/edit/{{_id}}"><i class="icon edit"></i>Edit</a>
-                <button class="ui negative button">Delete Blog</button>
-            </div>
-    </form>
-    {{#if admin}}
-   admin is here
-    {{else}}
-    There is nothing here
-    {{/if}}
 
     <div class="ui comments">
         <h3 class="ui dividing header">Comments</h3>
