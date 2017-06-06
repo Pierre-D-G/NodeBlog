@@ -38,6 +38,10 @@ Access Control
 
     $ mongoimport --db nodeblog --collection categories --drop --file categories-seed.json --jsonArray
 
+* Set the admin login credentials in admin-seed.json and enter it into the database with:
+
+    $ mongoimport --db nodeblog --collection login --drop --file admin-seed.json --jsonArray
+
 * Run the app with: 
 
      $ npm start
@@ -64,9 +68,9 @@ Access Control
 
 Access Control:
 
-* Admin Login
+* ~~Admin Login~~
 
-* Admin Only Access to create,edit,delete blogs and categories
+* ~~Admin Only Access to create,edit,delete blogs and categories~~
 
 
 

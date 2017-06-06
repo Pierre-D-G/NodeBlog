@@ -37,7 +37,7 @@ router.get('/new', isLoggedIn, function (req, res, next) {
 });
 
 /*Post form data*/
-router.post('/new', upload.single('blogImage'), function (req, res, next) {
+router.post('/new', isLoggedIn, upload.single('blogImage'), function (req, res, next) {
   /* Grabbing form data */
   var title = req.body.title,
     category = req.body.category,
@@ -84,11 +84,19 @@ router.post('/new', upload.single('blogImage'), function (req, res, next) {
 });
 
 router.get('/show/:id', function (req, res, next) {
-  posts.findOne(req.params.id, function (err, post) {
+  if(req.isAuthenticated()){
+    posts.findOne(req.params.id, function (err, post) {
     res.render('show', {
       "post": post
     });
   });
+  }else{
+    posts.findOne(req.params.id, function (err, post) {
+    res.render('show2', {
+      "post": post
+    });
+  });
+  }
 });
 
 /*Post comments data*/
@@ -148,7 +156,7 @@ router.get('/edit/:id', isLoggedIn, function (req, res, next) {
 });
 
 // Update Blog
-router.put("/:id", upload.single('blogImage'), function(req, res, next){
+router.put("/:id", isLoggedIn, upload.single('blogImage'), function(req, res, next){
     var updatedPost = {
       "author": req.body.author,
       "title": req.body.title,
@@ -166,7 +174,7 @@ router.put("/:id", upload.single('blogImage'), function(req, res, next){
 
 // Delete Blog Post
 
-router.delete('/:id', function(req, res, next){
+router.delete('/:id', isLoggedIn, function(req, res, next){
   posts.findOneAndDelete(req.params.id, function(err, deletedPost){
     if(err){
       console.log(err);
@@ -184,4 +192,20 @@ function isLoggedIn(req, res, next){
     return next();
   }
   res.redirect('/')
+}
+
+function isAdmin(req, res, next){
+  if(req.isAuthenticated()){
+    posts.findOne(req.params.id, function (err, post) {
+    res.render('show', {
+      "post": post
+    });
+  });
+  }else{
+    posts.findOne(req.params.id, function (err, post) {
+    res.render('show2', {
+      "post": post
+    });
+  });
+  }
 }

@@ -12,7 +12,7 @@ router.get('/new', isLoggedIn, function (req, res, next) {
 });
 
 
-router.post('/new', function (req, res, next) {
+router.post('/new', isLoggedIn, function (req, res, next) {
     /* Grabbing form data */
     var categoryName = req.body.categoryName;
     // Form validation
